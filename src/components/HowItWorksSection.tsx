@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ArrowRight, Building2, Calculator } from 'lucide-react';
+import PDflowchart from '../assets/PD-flowchart.png';
 
 const steps = [
   {
@@ -49,7 +50,16 @@ const HowItWorksSection = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-dark mb-12">
           How It Works?
         </h2>
-        
+
+        {/* Flowchart visual */}
+        <div className="flex justify-center mb-16">
+          <img 
+            src={PDflowchart} 
+            alt="How It Works Flowchart" 
+            className="max-w-full md:max-w-4xl rounded-lg shadow-lg"
+          />
+        </div>
+
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Steps */}
           <div className="lg:w-1/2">
@@ -69,14 +79,14 @@ const HowItWorksSection = () => {
               </div>
             ))}
           </div>
-          
+
           {/* Calculator */}
           <div className="lg:w-1/2">
             <div className="bg-white p-8 rounded-lg shadow-md border border-gray-200">
               <h3 className="text-2xl font-semibold mb-6 text-gray-dark flex items-center">
                 <Building2 className="mr-2" /> Reserve Solar
               </h3>
-              
+
               <div className="mb-6">
                 <label className="block text-gray-700 mb-2">Select Solar Project</label>
                 <select 
@@ -89,7 +99,7 @@ const HowItWorksSection = () => {
                   ))}
                 </select>
               </div>
-              
+
               <div className="mb-6">
                 <label className="block text-gray-700 mb-2">Investment Amount (USD)</label>
                 <input 
@@ -100,21 +110,21 @@ const HowItWorksSection = () => {
                   min="50"
                 />
               </div>
-              
+
               <button 
                 className="w-full bg-gold hover:bg-gold-dark text-gray-dark font-medium py-3 px-4 rounded-lg mb-6 flex items-center justify-center"
                 onClick={handleCalculate}
               >
                 <Calculator className="mr-2" /> Calculate Energy Holding
               </button>
-              
+
               <div className="bg-gray-100 p-6 rounded-lg">
                 <div className="mb-4">
                   <div className="text-gray-600 mb-1">Energy in kWh</div>
                   <div className="text-navy-dark font-bold text-2xl">{energyHolding.toFixed(2)} W</div>
                   <div className="text-gray-500 text-sm">Estimated Annual Energy</div>
                 </div>
-                
+
                 <div>
                   <div className="text-gray-600 mb-1">Estimated Return</div>
                   <div className="text-green-600 font-bold text-2xl">${estimatedReturn.toFixed(2)}</div>
