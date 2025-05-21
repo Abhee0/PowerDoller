@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ArrowRight, Building2, Calculator } from 'lucide-react';
-import PDflowchart from '../assets/PD-flowchart.png';
+import PDflowchart from '../assets/PDFlow.png';
 
 const steps = [
   {
